@@ -13,7 +13,9 @@ alimentos = dict(lista_alimentos)  #trasnforma em dicionario
 
 entradas_usuario = open("usuario(1)", "r+") #cria lista
 
-
+'''
+oi
+'''
 
 #CHECANDO SE FUNCIONA - Rachel
 for entrada_usuario in alimentos:
