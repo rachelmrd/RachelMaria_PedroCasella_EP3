@@ -22,6 +22,7 @@ def lista_alimentos(nome_do_arquivo="alimentos.csv"):
             lista_alimentos.append(y)        #adiciona as palavras a nova lista
     return lista_alimentos
     
+    
 lista_alimentos('alimentos.csv')
 
 #------------------------------------------------------------------------------
@@ -44,6 +45,13 @@ def lista_usuário(nome_do_arquivo="usuario.csv"):
 lista_usuário()
 
 #------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
 
 
