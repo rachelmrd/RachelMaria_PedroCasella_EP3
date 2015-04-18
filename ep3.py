@@ -42,7 +42,24 @@ def lista_usuário(nome_do_arquivo="usuario.csv"):
     return lista_usuario
     
     
-lista_usuário()
+lista_usuário('usuario.csv')
+
+#------------------------------------------------------------------------------
+
+'''
+criação do dicionario dos alimetos da biblioteca
+'''
+
+alimentos={} #criando um dicionario vazio
+
+for i in lista_alimentos: #atribuindo as minhas comidas valores
+ alimento_caracteristica=i.split(',')
+ chave = alimento_caracteristica[0]
+ valores = alimento_caracteristica[1:]
+ alimentos[chave] = valores
+ 
+print(alimentos)
+print(alimentos['banana da terra'][1]) 
 
 #------------------------------------------------------------------------------
 
