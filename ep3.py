@@ -7,6 +7,9 @@ Created on Wed Apr 15 16:52:19 2015
 
 #EP3: Programa de Dieta Semanal 
 
+import matplotlib as plt
+
+
 #------------------------------------------------------------------------------
 '''
 importando a biblioteca de alimentos
@@ -72,21 +75,16 @@ print(alimentos['banana da terra'][1])
 
 
 
-#CHECANDO SE FUNCIONA - Rachel
-for entrada_usuario in alimentos:
-    print (entradas_usuario)
-
-
 
 #FÓRMULAS
 #CALORIAS NECESSÁRIAS - Rachel
 def calorias_necessarias():
-    peso = keys.entrada_usuario(ALTURA)
-    altura = keys.entrada_usuario(PESO (kg))
+    altura = keys.entrada_usuario(ALTURA)
+    peso = keys.entrada_usuario(PESO (kg))
     idade = keys.entrada_usuario(IDADE)
     sexo = keys.entrada_usuario(SEXO)
     
-    if sexo == H:
+    if sexo == "M":
         return (88,36+(13,4*peso)+(4,8*altura)-(5,7*idade))
     else:
         return (447,6+(9,2*peso)+(3,1*altura)-(4,3*idade))
@@ -94,18 +92,18 @@ def calorias_necessarias():
 
 #GRAU DE ATIVIDADE FISICA - Rachel
 def fator_atividade():
-    fator = keys,entrada_usuario(Fator)
+    fator = keys.entrada_usuario()
     
-    if fator == minimo:
+    if fator == "minimo":
         energia = (calorias_necessarias*1,2)
         
-    elif fator == baixo:
+    elif fator == "baixo":
         energia = (calorias_necessarias*1,375)
         
-    elif fator == medio:
+    elif fator == "medio":
         energia = (calorias_necessarias*1,55)
         
-    elif fator == alto:
+    elif fator == "alto":
         energia = (calorias_necessarias*1,725)
         
     else:  #fator == muito alto
@@ -114,7 +112,50 @@ def fator_atividade():
 
     
     
+
+"""
+Distribuições  (por Heloísa Guarita (veja em README))
+
+Calórica
+
+- Proteínas = 20% das calorias
+- Carboidratros = 60%
+- Gorduras = 20%
+
+
+Refeições
+
+- Café da manhã: 20% das calorias diárias
+- Lanche da manhã: 5%
+- Almoço: 30%
+- Lanche da tarde: 15%
+- Jantar: 20%
+- Ceia: 10%
+"""
+
+
+def proteinas_ideais(energia):
+    return energia*0,2
+  
+  
+def carboidratos_ideias(energia):
+    return energia*0,6
+
+  
+def gorduras_ideias(energia):
+    return energia*0,2
     
+    
+
+
+
+
+
+
+
+
+
+
     
     
     
