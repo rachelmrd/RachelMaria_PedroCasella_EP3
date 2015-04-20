@@ -114,9 +114,9 @@ def calorias_ideais():
     sexo = ("Sexo:  ")
 
     if sexo == "m":
-        return (88,36+(13,4*peso)+(4,8*altura*100)-(5,7*idade))
+        return (88.36+(13.4*peso)+(4.8*altura*100)-(5.7*idade))
     else:
-        return (447,6+(9,2*peso)+(3,1*altura)-(4,3*idade))
+        return (447.6+(9.2*peso)+(3.1*altura)-(4.3*idade))
  
 calorias_ideais()       
 print(calorias_ideais())
@@ -143,19 +143,19 @@ def fator_atividade():
     fator = carac_usuario[5]
     
     if fator == "minimo":
-        return (calorias_ideais*1,2)
+        return (calorias_ideais*1.2)
         
     elif fator == "baixo":
-        return (calorias_ideais*1,375)
+        return (calorias_ideais*1.375)
         
     elif fator == "medio":
-        return (calorias_ideais*1,55)
+        return (calorias_ideais*1.55)
         
     elif fator == "alto":
-        return (calorias_ideais*1,725)
+        return (calorias_ideais*1.725)
         
     else:  #fator == muito alto
-        return (calorias_ideais*1,9)
+        return (calorias_ideais*1.9)
 
   
 #------------------------------------------------------------------------------
@@ -169,15 +169,15 @@ Calórica
 '''
 
 def proteinas_ideais(fator_atividade):
-    return fator_atividade*0,2
+    return fator_atividade*0.2
   
   
 def carboidratos_ideias(fator_atividade):
-    return fator_atividade*0,6
+    return fator_atividade*0.6
 
   
 def gorduras_ideias(fator_atividade):
-    return fator_atividade*0,2
+    return fator_atividade*0.2
  
  
 '''
