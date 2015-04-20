@@ -59,34 +59,20 @@ for i in lista_alimentos('alimentos.csv'): #atribuindo valores às comidas
 
 #------------------------------------------------------------------------------
 '''
-input dos alimentos diários do usuário - para uma semana apenas
+input dos alimentos diários do usuário
+cálculo do que foi ingerido
 '''
 
 ps.alimentos_consumidos_primeira_semana()
 
 
-#------------------------------------------------------------------------------
-'''
-cálculo do que foi ingerido - parte foda
-'''
-
-
-for ps.alimentos_dia_1 in alimentos:
-    print(alimentos[ps.alimentos_dia_1[1]])
-    
-'''
-ps.alimentos_dia_2
-
-ps.alimentos_dia_3
-
-ps.alimentos_dia_4
-
-ps.alimentos_dia_5
-
-ps.alimentos_dia_6
-
-ps.alimentos_dia_7
-'''
+a1 = sum(ps.alimentos_dia_1)
+a2 = sum(ps.alimentos_dia_2)
+a3 = sum(ps.alimentos_dia_3)
+a4 = sum(ps.alimentos_dia_4)
+a5 = sum(ps.alimentos_dia_5)
+a6 = sum(ps.alimentos_dia_6)
+a7 = sum(ps.alimentos_dia_7)
 
 
 #------------------------------------------------------------------------------  
