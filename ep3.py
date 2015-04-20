@@ -65,11 +65,29 @@ input dos alimentos diários do usuário - para uma semana apenas
 ps.alimentos_consumidos_primeira_semana()
 
 
+
 #------------------------------------------------------------------------------
 '''
 cálculo do que foi ingerido - parte foda
 '''
 
+
+for ps.alimentos_dia_1 in alimentos:
+    print(alimentos[ps.alimentos_dia_1[1]])
+    
+'''
+ps.alimentos_dia_2
+
+ps.alimentos_dia_3
+
+ps.alimentos_dia_4
+
+ps.alimentos_dia_5
+
+ps.alimentos_dia_6
+
+ps.alimentos_dia_7
+'''
 
 
 #------------------------------------------------------------------------------  
