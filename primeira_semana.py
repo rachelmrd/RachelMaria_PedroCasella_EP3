@@ -21,11 +21,10 @@ def alimentos_consumidos_primeira_semana():
         alimento_usuario = input("Informe os alimentos consumidos no primeiro dia:  ")
         if alimento_usuario == "fim":
             break
-            
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
-            
-        alimentos_dia_1.append([alimento_usuario,quantidade])
-            
+       quantidade = float(input("Quantas gramas de cada alimento?:  "))
+       quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+       x = (quantidade_nominal*quantidade)/100
+       alimentos_dia_1.append(x)
             
     
     while True:
@@ -33,10 +32,10 @@ def alimentos_consumidos_primeira_semana():
         if alimento_usuario == "fim":
             break
             
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
-            
-        alimentos_dia_2.append([alimento_usuario,quantidade])
-        
+       quantidade = float(input("Quantas gramas de cada alimento?:  "))
+       quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+       x = (quantidade_nominal*quantidade)/100
+       alimentos_dia_2.append(x)
     
     
     while True:
@@ -44,9 +43,10 @@ def alimentos_consumidos_primeira_semana():
         if alimento_usuario == "fim":
             break
             
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
-            
-        alimentos_dia_3.append([alimento_usuario,quantidade])
+       quantidade = float(input("Quantas gramas de cada alimento?:  "))
+       quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+       x = (quantidade_nominal*quantidade)/100
+       alimentos_dia_3.append(x)
         
     
     
@@ -55,21 +55,20 @@ def alimentos_consumidos_primeira_semana():
         if alimento_usuario == "fim":
             break
             
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
-            
-        alimentos_dia_4.append([alimento_usuario,quantidade])
-        
-        
+       quantidade = float(input("Quantas gramas de cada alimento?:  "))
+       quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+       x = (quantidade_nominal*quantidade)/100
+       alimentos_dia_4.append(x)
     
     while True:
         alimento_usuario = input("Informe os alimentos consumidos no quinto dia:  ")
         if alimento_usuario == "fim":
             break
             
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
-            
-        alimentos_dia_5.append([alimento_usuario,quantidade])
-        
+       quantidade = float(input("Quantas gramas de cada alimento?:  "))
+       quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+       x = (quantidade_nominal*quantidade)/100
+       alimentos_dia_5.append(x)
     
     
     while True:
@@ -77,10 +76,10 @@ def alimentos_consumidos_primeira_semana():
         if alimento_usuario == "fim":
             break
             
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
-            
-        alimentos_dia_6.append([alimento_usuario,quantidade])
-        
+       quantidade = float(input("Quantas gramas de cada alimento?:  "))
+       quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+       x = (quantidade_nominal*quantidade)/100
+       alimentos_dia_6.append(x)
         
     
     while True:
@@ -88,6 +87,55 @@ def alimentos_consumidos_primeira_semana():
         if alimento_usuario == "fim":
             break
             
+<<<<<<< HEAD
         quantidade = float(input("Quantas gramas de cada alimento?:  "))
             
         alimentos_dia_7.append([alimento_usuario,quantidade])
+=======
+       quantidade = float(input("Quantas gramas de cada alimento?:  "))
+       quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+       x = (quantidade_nominal*quantidade)/100
+       alimentos_dia_7.append(x)
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+>>>>>>> origin/master
