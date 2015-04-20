@@ -45,7 +45,7 @@ def lista_usuário(nome_do_arquivo="usuario.csv"):
     return lista_usuario
     
     
-print(lista_usuário('usuario.csv'))
+#print(lista_usuário('usuario.csv'))
 
 
 #------------------------------------------------------------------------------
@@ -71,7 +71,7 @@ for i in lista_alimentos('alimentos.csv'): #atribuindo valores às comidas
 #------------------------------------------------------------------------------
 '''
 fórmulas: calorias necessárias
-'''
+
 
 def calorias_ideais():
     text = open('usuario.csv', 'r+', encoding = 'utf-8' )
@@ -91,11 +91,11 @@ def calorias_ideais():
     #IDENTIFICAÇÃO DE CARACTERÍSTICAS DO USUÁRIO
     #chave = carac_usuario[0]
     altura = carac_usuario[4]
-    list(float(altura))
+    list(altura)
     peso = carac_usuario[2]
-    list(float(peso))
+    list(peso)
     idade = carac_usuario[1]
-    list(float(idade))
+    list(idade)
     sexo = carac_usuario[3]
     
     #DEFINIÇÃO DAS CALORIAS DIÁRIAS DO USUÁRIO
@@ -105,8 +105,23 @@ def calorias_ideais():
         return (447,6+(9,2*peso)+(3,1*altura)-(4,3*idade))
         
 print(calorias_ideais())
+'''
+
+def calorias_ideais():
+    altura = float(input("Dê suas seguintes informações. Altura:  "))
+    peso = float(input("Peso:  "))
+    idade = float(input("Idade:  "))
+    sexo = ("Sexo:  ")
+
+    if sexo == "m":
+        return (88,36+(13,4*peso)+(4,8*altura*100)-(5,7*idade))
+    else:
+        return (447,6+(9,2*peso)+(3,1*altura)-(4,3*idade))
  
- 
+calorias_ideais()       
+print(calorias_ideais())
+
+
 #------------------------------------------------------------------------------
 '''
 fórmulas: grau de atividade física
