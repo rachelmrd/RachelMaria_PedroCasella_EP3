@@ -65,7 +65,6 @@ input dos alimentos diários do usuário - para uma semana apenas
 ps.alimentos_consumidos_primeira_semana()
 
 
-
 #------------------------------------------------------------------------------
 '''
 cálculo do que foi ingerido - parte foda
