@@ -5,10 +5,11 @@ Created on Mon Apr 20 13:58:00 2015
 @author: Rachel
 """
 
-alimentos_dia_1 = []
-alimentos_dia_2 = []
-alimentos_dia_3 = []
-alimentos_dia_4 = []
+
+alimentos_dia_1 = []     #elementos da lista são
+alimentos_dia_2 = []     #números (calorias) que
+alimentos_dia_3 = []     #serão somados no código
+alimentos_dia_4 = []     #principal EP3.
 alimentos_dia_5 = []
 alimentos_dia_6 = []
 alimentos_dia_7 = []
@@ -90,46 +91,3 @@ def alimentos_consumidos_primeira_semana():
         quantidade = float(input("Quantas gramas de cada alimento?:  "))
             
         alimentos_dia_7.append([alimento_usuario,quantidade])
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 

@@ -27,7 +27,7 @@ def lista_alimentos(nome_do_arquivo="alimentos.csv"):
     text = open(nome_do_arquivo, 'r+', encoding = 'utf-8' )
     read = text.readlines() #lista suja
     lista_alimentos =[] #lista limpa
-    for linha in read:   #joga todas as palavras na lista limpa
+    for linha in read:  #joga todas as palavras na lista limpa
         y = linha.strip().lower()
         if len(y) > 0:  
             lista_alimentos.append(y)  #adiciona as palavras a nova lista
@@ -45,10 +45,10 @@ criação do dicionario dos alimentos com suas caracteristicas
 alimentos={} #criando um dicionario vazio
 
 for i in lista_alimentos('alimentos.csv'): #atribuindo valores às comidas
- alimento_caracteristica = i.split(',')
- chave = alimento_caracteristica[0]
- valores = alimento_caracteristica[1:]
- alimentos[chave] = valores
+    alimento_caracteristica = i.split(',')
+    chave = alimento_caracteristica[0]
+    valores = alimento_caracteristica[1:]
+    alimentos[chave] = valores               #transformação em dicionário
  
 
 
