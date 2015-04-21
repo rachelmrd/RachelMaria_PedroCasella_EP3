@@ -189,24 +189,33 @@ Refeições
 - Ceia: 10%
 '''
 
-def dieta(calorias_ideais):
-    cafe = relaçao_calorica*0.2
-    lanche_manha = relaçao_calorica*0.05
-    almoco = relaçao_calorica*0.3
-    lanche_tarde = relaçao_calorica*0.15
-    jantar = relaçao_calorica*0.2
-    ceia = relaçao_calorica*0.1
 
-    return (cafe+lanche_manha+almoco+lanche_tarde+jantar+ceia)
+cafe = relaçao_calorica*0.2
+lanche_manha = relaçao_calorica*0.05
+almoco = relaçao_calorica*0.3
+lanche_tarde = relaçao_calorica*0.15
+jantar = relaçao_calorica*0.2
+ceia = relaçao_calorica*0.1
 
-
-dieta(calorias_ideais)
 
 
 #------------------------------------------------------------------------------
 '''
 plota o gráfico das divisões em refeições
 '''
+
+def grafico_refeicoes(semana,ideal):
+    data = Data([
+        Bar(
+            x=['Café', 'Lanche Manhã', 'Almoço', 'Lanche Tarde', 'Jantar', 'Ceia'],
+            y=[cafe, lanche_manha, almoco, lanche_tarde, jantar, ceia]
+        )
+    ])
+    py.plot(data, filename = 'Calorias por refeição')
+    
+    
+        
+grafico_refeicoes(semana,ideal)  #chama a comparação  
 
 
 
