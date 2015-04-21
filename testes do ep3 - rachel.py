@@ -5,34 +5,20 @@ Created on Mon Apr 20 15:12:56 2015
 @author: Rachel
 """
 import primeira_semana as ps
-from ep3 import lista_alimentos
+import ep3 as ep
 
 
-alimentos={} #criando um dicionario vazio
+import plotly.plotly as py
+from plotly.graph_objs import *
 
-for i in lista_alimentos('alimentos.csv'): #atribuindo valores às comidas
- alimento_caracteristica = i.split(',')
- chave = alimento_caracteristica[0]
- valores = alimento_caracteristica[1:]
- alimentos[chave] = valores
- 
-
-
-for ps.alimentos_dia_1 in alimentos:
-    print("alimentos[ps.alimentos_dia_1[1]]")
+def grafico_consumo_comparado(a1,a2,a3,a4,a5,a6,a7):
+    data = Data([
+        Bar(
+            x=['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7'],
+            y=[a1, a2, a3, a4, a5, a6, a7]
+        )
+    ])
+    py.plot(data, filename = 'Gráfico das calorias ingeridas nessa semana')
     
-    
-    
-'''
-ps.alimentos_dia_2
-
-ps.alimentos_dia_3
-
-ps.alimentos_dia_4
-
-ps.alimentos_dia_5
-
-ps.alimentos_dia_6
-
-ps.alimentos_dia_7
-'''
+        
+grafico_consumo_comprado(a1,a2,a3,a4,a5,a6,a7)  #chama a função gráfico consumo  

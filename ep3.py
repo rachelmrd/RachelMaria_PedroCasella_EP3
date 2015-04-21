@@ -14,8 +14,11 @@ O programa gerará um gráfico diário e um gráfico de IMC ideal.
 
 
 #EP3: Programa de Dieta Semanal 
-import matplotlib as plt #para plotar os gráficos ideais do usuário
+
 import primeira_semana as ps
+import plotly.plotly as py
+from plotly.graph_objs import *
+
 
 
 #------------------------------------------------------------------------------
@@ -51,12 +54,6 @@ for i in lista_alimentos('alimentos.csv'): #atribuindo valores às comidas
     alimentos[chave] = valores               #transformação em dicionário
  
 
-
-#TESTES:
-#print(alimentos)       
-#print(alimentos['banana da terra'][1]) 
-
-
 #------------------------------------------------------------------------------
 '''
 input dos alimentos diários do usuário
@@ -75,12 +72,24 @@ a6 = sum(ps.alimentos_dia_6)
 a7 = sum(ps.alimentos_dia_7)
 
 
-#------------------------------------------------------------------------------  
+#------------------------------------------------------------------------------ 
 '''
-plota o gráfico do que foi consumido 
+plota o gráfico do que foi consumido a cada dia da semana
 '''
-   
-   
+
+def grafico_consumo_semanal(a1,a2,a3,a4,a5,a6,a7):
+    data = Data([
+        Bar(
+            x=['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7'],
+            y=[a1, a2, a3, a4, a5, a6, a7]
+        )
+    ])
+    py.plot(data, filename = 'Gráfico das calorias ingeridas nessa semana')
+    
+        
+grafico_consumo_semanal(a1,a2,a3,a4,a5,a6,a7)  #chama a função gráfico consumo  
+
+
 #------------------------------------------------------------------------------
 '''
 fórmulas: calorias ideias a serem consumidas
@@ -99,13 +108,12 @@ def calorias_ideais():
         return (447.6+(9.2*peso)+(3.1*altura)-(4.3*idade))
  
       
-print(calorias_ideais())
 relaçao_calorica = calorias_ideais()
 
 
 #------------------------------------------------------------------------------
 '''
-fórmulas: grau de atividade física
+fórmulas: grau de atividade física para saber o quanto consumir
 '''
 relaçao_calorica = calorias_ideais()
 def fator_atividade(relacao_calorica):    
@@ -127,16 +135,26 @@ def fator_atividade(relacao_calorica):
         return (relaçao_calorica*1.9)
 
 fator_atividade() 
-ativ_fisica = fator_atividade()
+ideal = fator_atividade()
 
-#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------  
 '''
-plota o gráfico ideal 
+plota o gráfico do que foi consumido na semana comparando com o ideal
 '''
+semana = (a1+a2+a3+a4+a5+a6+a7)/7
 
-
-
-
+def grafico_consumo_comparado(semana,ideal):
+    data = Data([
+        Bar(
+            x=['Consumido na Semana', 'Consumo ideal'],
+            y=[semana,ideal]
+        )
+    ])
+    py.plot(data, filename = 'Comparação Consumo x Ideal')
+    
+    
+        
+grafico_consumo_comparado(semana,ideal)  #chama a comparação  
 
 
 #------------------------------------------------------------------------------
@@ -149,15 +167,15 @@ Calórica
 - Gorduras = 20%
 '''
 
-def proteinas_ideais(fator_atividade):
+def proteinas_ideais(ativ_fisica):
     return ativ_fisica*0.2
   
   
-def carboidratos_ideias(fator_atividade):
+def carboidratos_ideias(ativ_fisica):
     return ativ_fisica*0.6
 
   
-def gorduras_ideias(fator_atividade):
+def gorduras_ideias(ativ_fisica):
     return ativ_fisica*0.2
  
  
@@ -182,11 +200,13 @@ def dieta(calorias_ideais):
     return (cafe+lanche_manha+almoco+lanche_tarde+jantar+ceia)
 
 
+dieta(calorias_ideais)
+
+
 #------------------------------------------------------------------------------
-
-
-
-
+'''
+plota o gráfico das divisões em refeições
+'''
 
 
 

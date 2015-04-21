@@ -5,6 +5,7 @@ Created on Mon Apr 20 13:58:00 2015
 @author: Rachel
 """
 
+import ep3 as ep
 
 alimentos_dia_1 = []     #elementos da lista são
 alimentos_dia_2 = []     #números (calorias) que
@@ -14,6 +15,7 @@ alimentos_dia_5 = []
 alimentos_dia_6 = []
 alimentos_dia_7 = []
 
+alimentos = ep.alimentos
 
 def alimentos_consumidos_primeira_semana():
     
@@ -21,7 +23,7 @@ def alimentos_consumidos_primeira_semana():
         alimento_usuario = input("Informe os alimentos consumidos no primeiro dia:  ")
         if alimento_usuario == "fim":
             break
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
+        quantidade = float(input("Quantas gramas?:  "))
         quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
         x = (quantidade_nominal*quantidade)/100
         alimentos_dia_1.append(x)
@@ -32,7 +34,7 @@ def alimentos_consumidos_primeira_semana():
         if alimento_usuario == "fim":
             break
             
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
+        quantidade = float(input("Quantas gramas?:  "))
         quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
         x = (quantidade_nominal*quantidade)/100
         alimentos_dia_2.append(x)
@@ -43,7 +45,7 @@ def alimentos_consumidos_primeira_semana():
         if alimento_usuario == "fim":
             break
             
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
+        quantidade = float(input("Quantas gramas?:  "))
         quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
         x = (quantidade_nominal*quantidade)/100
         alimentos_dia_3.append(x)
@@ -55,7 +57,7 @@ def alimentos_consumidos_primeira_semana():
         if alimento_usuario == "fim":
             break
             
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
+        quantidade = float(input("Quantas gramas?:  "))
         quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
         x = (quantidade_nominal*quantidade)/100
         alimentos_dia_4.append(x)
@@ -65,7 +67,7 @@ def alimentos_consumidos_primeira_semana():
         if alimento_usuario == "fim":
             break
             
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
+        quantidade = float(input("Quantas gramas?:  "))
         quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
         x = (quantidade_nominal*quantidade)/100
         alimentos_dia_5.append(x)
@@ -76,7 +78,7 @@ def alimentos_consumidos_primeira_semana():
         if alimento_usuario == "fim":
             break
             
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
+        quantidade = float(input("Quantas gramas?:  "))
         quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
         x = (quantidade_nominal*quantidade)/100
         alimentos_dia_6.append(x)
@@ -86,56 +88,7 @@ def alimentos_consumidos_primeira_semana():
         alimento_usuario = input("Informe os alimentos consumidos no sétimo dia:  ")
         if alimento_usuario == "fim":
             break
-            
-<<<<<<< HEAD
-        quantidade = float(input("Quantas gramas de cada alimento?:  "))
-            
-        alimentos_dia_7.append([alimento_usuario,quantidade])
-=======
-       quantidade = float(input("Quantas gramas de cada alimento?:  "))
-       quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
-       x = (quantidade_nominal*quantidade)/100
-       alimentos_dia_7.append(x)
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
->>>>>>> origin/master
+        quantidade = float(input("Quantas gramas?  "))
+        quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+        x = (quantidade_nominal*quantidade)/100
+        alimentos_dia_6.append(x)
