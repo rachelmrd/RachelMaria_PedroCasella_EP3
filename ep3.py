@@ -64,7 +64,7 @@ a2 = sum(ps.alimentos_dia_2)
 a3 = sum(ps.alimentos_dia_3)           #faz a soma dos alimentos
 a4 = sum(ps.alimentos_dia_4)            #consumidos a cada dia e
 a5 = sum(ps.alimentos_dia_5)            #transforma nas variaveis 
-a6 = sum(ps.alimentos_dia_6)            #utilizadas no gráfico
+a6 = sum(ps.alimentos_dia_6)            #utilizadas no gráfico(consumo)
 a7 = sum(ps.alimentos_dia_7)
 
 
@@ -113,7 +113,7 @@ fórmulas: calorias de acordo com grau de atividade física
 '''
 
 def fator_atividade(relacao_calorica):    
-    fator = input("Informe seu fator de atividade\n (mínimo, baixo, médio, alto ou muito alto):  ")    
+    fator = input("Informe seu fator de atividade\n Mínimo, baixo, médio, alto ou muito alto):  ")    
     
     if fator == "minimo" or "mínimo":
         return (relacao_calorica*1.2)
@@ -131,7 +131,7 @@ def fator_atividade(relacao_calorica):
         return (relacao_calorica*1.9)
 
 fator_atividade() 
-ideal = fator_atividade()
+ideal = fator_atividade()   #para uso no gráfico (comparação)
 
 #------------------------------------------------------------------------------  
 '''
@@ -163,16 +163,9 @@ Calórica
 - Gorduras = 20%
 '''
 
-def proteinas_ideais(ativ_fisica):
-    return ativ_fisica*0.2
-  
-  
-def carboidratos_ideias(ativ_fisica):
-    return ativ_fisica*0.6
-
-  
-def gorduras_ideias(ativ_fisica):
-    return ativ_fisica*0.2
+proteinas_ideais = ideal*0.2
+carboidratos_ideias = ideal*0.6
+gorduras_ideias = ideal*0.2
  
  
 '''
@@ -196,7 +189,7 @@ ceia = relacao_calorica*0.1
 
 #------------------------------------------------------------------------------
 '''
-plota um gráfico-demonstração de distribuição de refeições
+plota um gráfico-pizza-demonstração de distribuição de refeições
 '''
 
 labels = 'Cafe', 'Lanche1', 'Almoco', 'Lanche2', 'Janta', 'Ceia'

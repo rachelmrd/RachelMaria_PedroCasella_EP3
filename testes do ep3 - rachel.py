@@ -24,10 +24,10 @@ plt.title('Gráfico Semanal')
 
 plt.show()
 '''
-'''
+
 import numpy as np
 import matplotlib.pyplot as plt
-'''
+
 
 a1 = 1523
 a2 = 2156
@@ -58,17 +58,16 @@ plt.legend( (p1[0]), ('Men', 'Women') )
 
 plt.show()
 '''
+from pylab import title
 
-
-fig = plt.figure()
-
-x = ('Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7')
-y = (a1, a2, a3, a4, a5, a6, a7)
-width = .35
-ind = np.arange(len(y))    #divisão do espaço pelo número de dias(variaveis)
-plt.bar(ind, y, color='lightpink',edgecolor='black',linewidth=1, width = 0.7)
-plt.xticks(ind + width, x)
-fig.autofmt_xdate()
+title('Distribuicao recomendada de calorias por refeicao', bbox={'facecolor':'0.8', 'pad':3})
+labels = 'Cafe', 'Lanche1', 'Almoco', 'Lanche2', 'Janta', 'Ceia'
+sizes = [20, 5, 30, 15, 20, 10]
+colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral', 'blue', 'pink']
+explode = (0.05, 0.1, 0.05, 0.1, 0.05, 0.1) #serapação das rfeições
+plt.pie(sizes, explode=explode, labels=labels, colors=colors,
+        autopct='%1.1f%%', shadow=True, startangle=90)
+plt.axis('equal') #transforma em círculo
 
 plt.show()
 
