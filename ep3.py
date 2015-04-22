@@ -15,6 +15,7 @@ O programa gerará um gráfico diário e um gráfico de IMC ideal.
 import primeira_semana as ps
 import numpy as np
 from matplotlib import pyplot as plt
+from pylab import *
 
 
 #------------------------------------------------------------------------------
@@ -53,6 +54,13 @@ for i in lista_alimentos('alimentos.csv'): #atribuindo valores às comidas
 #------------------------------------------------------------------------------
 
 
+alimentos_dia_1 = []     #elementos da lista são
+alimentos_dia_2 = []     #números (calorias) que
+alimentos_dia_3 = []     #serão somados no código
+alimentos_dia_4 = []     #principal EP3.
+alimentos_dia_5 = []
+alimentos_dia_6 = []
+alimentos_dia_7 = []
 
 def alimentos_consumidos_primeira_semana():
     
@@ -87,7 +95,6 @@ def alimentos_consumidos_primeira_semana():
         x = (quantidade_nominal*quantidade)/100
         alimentos_dia_3.append(x)
         
-    
     
     while True:
         alimento_usuario = input("Informe os alimentos consumidos no quarto dia:  ")
@@ -267,6 +274,10 @@ ceia = relacao_calorica*0.1
 plota um gráfico-pizza-demonstração de distribuição de refeições
 '''
 
+fig = plt.gcf()
+fig.set_size_inches(4,4)
+
+title('Distribuição Recomendada de Calorias por Refeição\n\n')
 labels = 'Cafe', 'Lanche1', 'Almoco', 'Lanche2', 'Janta', 'Ceia'
 sizes = [20, 5, 30, 15, 20, 10]
 colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral', 'blue', 'pink']
@@ -276,7 +287,6 @@ plt.pie(sizes, explode=explode, labels=labels, colors=colors,
 plt.axis('equal') #transforma em círculo
 
 plt.show()
-
 #------------------------------------------------------------------------------
 
 

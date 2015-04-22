@@ -25,7 +25,7 @@ def lista_alimentos(nome_do_arquivo="alimentos.csv"):
     
     
 lista_alimentos('alimentos.csv')
-
+print()
 
 #------------------------------------------------------------------------------
 '''
