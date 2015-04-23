@@ -189,6 +189,15 @@ relacao_calorica = calorias_ideais()
 
 
 #------------------------------------------------------------------------------
+
+'''
+cálculo do IMC (Índice de Massa Corporal) - utilizando a nova fórmula
+'''
+
+imc = 1.3*peso/(altura**2.5)
+
+
+#------------------------------------------------------------------------------
 '''
 fórmulas: calorias de acordo com grau de atividade física
 '''
@@ -287,5 +296,59 @@ plt.axis('equal') #transforma em círculo
 
 plt.show()
 #------------------------------------------------------------------------------
+'''
+resultado do IMC
+'''
+
+def grau(imc):
+    if imc < 16:
+        return "Magreza grave"
+    elif 16<=imc<17:
+        return "Magreza moderada"
+    elif 17<=imc<18.5:
+        return "Magreza leve"
+    elif 18.5<=imc<25:
+        return "Saudável"
+    elif 25<=imc<30:
+        return "Sobrepeso"
+    elif 30<=imc<35:
+        return "Obesidade Grau I"
+    elif 35<=imc<40:
+        return "Obesidade Grau II"
+    elif 40<=imc:
+        return "Obesidade Grau III: mórbida"
+
+#------------------------------------------------------------------------------
+'''
+gerando arquivo texto com as informações do usuário / IMC
+'''
+
+arquivo_texto = open('Informando-o-usuario', 'a')  #A para um append (o que já estava no arquivo vai para o final)
+read = arquivo_texto.readlines()
+
+arquivo_texto.write("Seu Índice de Massa Corporal, conhecido por IMC, é %f" % imc)
+arquivo_texto.write("Assim, analisamos seu grau de obesidade, que é %s" %grau(imc))
 
 
+if a1 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 1 do que foi indicado." %ideal-a1)
+if a2 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 2 do que foi indicado." %ideal-a2)
+if a3 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 3 do que foi indicado." %ideal-a3)
+if a4 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 4 do que foi indicado." %ideal-a4)
+if a5 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 5 do que foi indicado." %ideal-a5)
+if a6 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 6 do que foi indicado." %ideal-a6)
+if a7 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 7 do que foi indicado." %ideal-a7)    
+
+
+arquivo_texto.write("Veja abaixo o significado dessas informações.")
+#presente no arquivo já
+
+
+arquivo_texto.close()
+#------------------------------------------------------------------------------
