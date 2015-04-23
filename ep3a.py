@@ -12,7 +12,6 @@ O programa gerará um gráfico diário e um gráfico de IMC ideal.
 """
 #EP3: Programa de Dieta Semanal 
 
-import primeira_semana as ps
 import numpy as np
 from matplotlib import pyplot as plt
 from pylab import *
@@ -219,7 +218,7 @@ def alimentos_consumidos_primeira_semana():
                 break
             quantidade = float(input("Quantas gramas?  "))
             quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
-             #armazenamento informações de quantidade de calorias
+            #armazenamento informações de quantidade de calorias
             x = (quantidade_nominal*quantidade)/100
             alimentos_dia_6.append(x)
              #armazenando informações de quantidade de proteinas
@@ -312,12 +311,25 @@ relacao_calorica = calorias_ideais()
 
 
 #------------------------------------------------------------------------------
+
+'''
+cálculo do IMC (Índice de Massa Corporal) - utilizando a nova fórmula
+'''
+
+imc = 1.3*peso/(altura**2.5)
+
+
+#------------------------------------------------------------------------------
 '''
 fórmulas: calorias de acordo com grau de atividade física
 '''
 
 def fator_atividade(relacao_calorica):    
+
     fator = input("Informe seu fator de atividade\n(Mínimo, baixo, médio, alto ou muito alto):  ")    
+
+    fator = input("Informe seu fator de atividade\n(Mínimo, baixo, médio, alto ou muito alto):  ")    
+
     
     if fator == "minimo" or "mínimo":
         return (relacao_calorica*1.2)
@@ -334,7 +346,7 @@ def fator_atividade(relacao_calorica):
     else:  #fator == muito alto
         return (relacao_calorica*1.9)
 
-fator_atividade(relacao_calorica) 
+
 ideal = fator_atividade(relacao_calorica)   #para uso no gráfico (comparação)
 
 #------------------------------------------------------------------------------  
@@ -410,5 +422,78 @@ plt.axis('equal') #transforma em círculo
 
 plt.show()
 #------------------------------------------------------------------------------
+'''
+resultado do IMC
+'''
+
+def grau(imc):
+    if imc < 16:
+        return "Magreza grave"
+    elif 16<=imc<17:
+        return "Magreza moderada"
+    elif 17<=imc<18.5:
+        return "Magreza leve"
+    elif 18.5<=imc<25:
+        return "Saudável"
+    elif 25<=imc<30:
+        return "Sobrepeso"
+    elif 30<=imc<35:
+        return "Obesidade Grau I"
+    elif 35<=imc<40:
+        return "Obesidade Grau II"
+    elif 40<=imc:
+        return "Obesidade Grau III: mórbida"
+
+#------------------------------------------------------------------------------
+'''
+soma de quantos kg o usuario engordou ou emagreceu
+'''
+e1 = ideal-a1
+e2 = ideal-a2
+e3 = ideal-a3
+e4 = ideal-a4
+e5 = ideal-a5
+e6 = ideal-a6
+e7 = ideal-a7
+
+kg = e1+e2+e3+e4+e5+e6+e7/7000  #KG GANHO OU PERDA
 
 
+#------------------------------------------------------------------------------
+'''
+gerando arquivo texto com as informações do usuário / IMC
+'''
+
+arquivo_texto = open('Informando-o-usuario', 'a')  #A para um append (o que já estava no arquivo vai para o final)
+read = arquivo_texto.readlines()
+
+arquivo_texto.write("Seu Índice de Massa Corporal, conhecido por IMC, é %f" % imc)
+arquivo_texto.write("Assim, analisamos seu grau de obesidade, que é %s" %grau(imc))
+
+
+if a1 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 1 do que foi indicado." %ideal-a1)
+if a2 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 2 do que foi indicado." %ideal-a2)
+if a3 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 3 do que foi indicado." %ideal-a3)
+if a4 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 4 do que foi indicado." %ideal-a4)
+if a5 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 5 do que foi indicado." %ideal-a5)
+if a6 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 6 do que foi indicado." %ideal-a6)
+if a7 > ideal:
+    arquivo_texto.write("Você consumiu %d calorias a mais no Dia 7 do que foi indicado." %ideal-a7)    
+if kg > 0:
+    arquivo_texto.write("Você engordou %d kg até agora." %kg)
+if kg < 0:
+    arquivo_texto.write("Você engordou %d kg até agora." %kg)
+    
+
+arquivo_texto.write("Veja abaixo o significado dessas informações.")
+#presente no arquivo já
+
+
+arquivo_texto.close()
+#------------------------------------------------------------------------------
