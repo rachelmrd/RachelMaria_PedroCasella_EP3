@@ -13,6 +13,7 @@ import primeira_semana as ps
 importando a biblioteca de alimentos como lista
 '''
 
+
 def lista_alimentos(nome_do_arquivo="alimentos.csv"):
     text = open(nome_do_arquivo, 'r+')
     read = text.readlines() #lista suja
@@ -25,20 +26,14 @@ def lista_alimentos(nome_do_arquivo="alimentos.csv"):
     
     
 lista_alimentos('alimentos.csv')
-print()
 
-#------------------------------------------------------------------------------
-'''
-criação do dicionario dos alimentos com suas caracteristicas 
-'''
 
-alimentos={} #criando um dicionario vazio
 
-for i in lista_alimentos('alimentos.csv'): #atribuindo valores às comidas
-    alimento_caracteristica = i.split(',')
-    chave = alimento_caracteristica[0]
-    valores = alimento_caracteristica[1:]
-    alimentos[chave] = valores               #dicionário
- 
 
-#------------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+    
+    
+#SEM OUTPUT

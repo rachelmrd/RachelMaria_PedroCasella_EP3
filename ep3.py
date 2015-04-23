@@ -12,7 +12,6 @@ O programa gerará um gráfico diário e um gráfico de IMC ideal.
 """
 #EP3: Programa de Dieta Semanal 
 
-import primeira_semana as ps
 import numpy as np
 from matplotlib import pyplot as plt
 from pylab import *
@@ -195,7 +194,7 @@ fórmulas: calorias de acordo com grau de atividade física
 '''
 
 def fator_atividade(relacao_calorica):    
-    fator = input("Informe seu fator de atividade\n Mínimo, baixo, médio, alto ou muito alto):  ")    
+    fator = input("Informe seu fator de atividade\nMínimo, baixo, médio, alto ou muito alto:  ")    
     
     if fator == "minimo" or "mínimo":
         return (relacao_calorica*1.2)
@@ -212,7 +211,7 @@ def fator_atividade(relacao_calorica):
     else:  #fator == muito alto
         return (relacao_calorica*1.9)
 
-fator_atividade(relacao_calorica) 
+
 ideal = fator_atividade(relacao_calorica)   #para uso no gráfico (comparação)
 
 #------------------------------------------------------------------------------  
