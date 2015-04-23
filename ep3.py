@@ -320,6 +320,21 @@ def grau(imc):
 
 #------------------------------------------------------------------------------
 '''
+soma de quantos kg o usuario engordou ou emagreceu
+'''
+e1 = ideal-a1
+e2 = ideal-a2
+e3 = ideal-a3
+e4 = ideal-a4
+e5 = ideal-a5
+e6 = ideal-a6
+e7 = ideal-a7
+
+kg = e1+e2+e3+e4+e5+e6+e7/7000  #KG GANHO OU PERDA
+
+
+#------------------------------------------------------------------------------
+'''
 gerando arquivo texto com as informações do usuário / IMC
 '''
 
@@ -344,7 +359,11 @@ if a6 > ideal:
     arquivo_texto.write("Você consumiu %d calorias a mais no Dia 6 do que foi indicado." %ideal-a6)
 if a7 > ideal:
     arquivo_texto.write("Você consumiu %d calorias a mais no Dia 7 do que foi indicado." %ideal-a7)    
-
+if kg > 0:
+    arquivo_texto.write("Você engordou %d kg até agora." %kg)
+if kg < 0:
+    arquivo_texto.write("Você engordou %d kg até agora." %kg)
+    
 
 arquivo_texto.write("Veja abaixo o significado dessas informações.")
 #presente no arquivo já
