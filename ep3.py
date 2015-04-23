@@ -52,7 +52,9 @@ for i in lista_alimentos('alimentos.csv'): #atribuindo valores às comidas
  
 
 #------------------------------------------------------------------------------
-
+'''
+Opção input do usuario de cada alimento comido em seu dia
+'''
 
 alimentos_dia_1 = []     #elementos da lista são
 alimentos_dia_2 = []     #números (calorias) que
@@ -62,81 +64,178 @@ alimentos_dia_5 = []
 alimentos_dia_6 = []
 alimentos_dia_7 = []
 
-def alimentos_consumidos_primeira_semana():
-    
-    while True:
-        alimento_usuario = input("Informe os alimentos consumidos no primeiro dia:  ")
-        if alimento_usuario == "fim":
-            break
-        quantidade = float(input("Quantas gramas?:  "))
-        quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
-        x = (quantidade_nominal*quantidade)/100
-        alimentos_dia_1.append(x)
-            
-    
-    while True:
-        alimento_usuario = input("Informe os alimentos consumidos no segundo dia:  ")
-        if alimento_usuario == "fim":
-            break
-            
-        quantidade = float(input("Quantas gramas?:  "))
-        quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
-        x = (quantidade_nominal*quantidade)/100
-        alimentos_dia_2.append(x)
-    
-    
-    while True:
-        alimento_usuario = input("Informe os alimentos consumidos no terceiro dia:  ")
-        if alimento_usuario == "fim":
-            break
-            
-        quantidade = float(input("Quantas gramas?:  "))
-        quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
-        x = (quantidade_nominal*quantidade)/100
-        alimentos_dia_3.append(x)
-        
-    
-    while True:
-        alimento_usuario = input("Informe os alimentos consumidos no quarto dia:  ")
-        if alimento_usuario == "fim":
-            break
-            
-        quantidade = float(input("Quantas gramas?:  "))
-        quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
-        x = (quantidade_nominal*quantidade)/100
-        alimentos_dia_4.append(x)
-    
-    while True:
-        alimento_usuario = input("Informe os alimentos consumidos no quinto dia:  ")
-        if alimento_usuario == "fim":
-            break
-            
-        quantidade = float(input("Quantas gramas?:  "))
-        quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
-        x = (quantidade_nominal*quantidade)/100
-        alimentos_dia_5.append(x)
-    
-    
-    while True:
-        alimento_usuario = input("Informe os alimentos consumidos no sexto dia:  ")
-        if alimento_usuario == "fim":
-            break
-            
-        quantidade = float(input("Quantas gramas?:  "))
-        quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
-        x = (quantidade_nominal*quantidade)/100
-        alimentos_dia_6.append(x)
-        
-    
-    while True:
-        alimento_usuario = input("Informe os alimentos consumidos no sétimo dia:  ")
-        if alimento_usuario == "fim":
-            break
-        quantidade = float(input("Quantas gramas?  "))
-        quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
-        x = (quantidade_nominal*quantidade)/100
-        alimentos_dia_6.append(x)
+alimentos_proteinas = []        #listas cridas para ter os
+alimentos_lipidios = []         #valores totais correspondentes agrupados
+alimentos_carboidratos = []
 
+def alimentos_consumidos_primeira_semana():
+    while True:
+        print('Bem vindo ao Meça Sua Dieta!!\nPara cada dia digite sua comida\nQuando terminar digite fim')
+        while True:
+            
+            alimento_usuario = input("Informe os alimentos consumidos no primeiro dia:  ")
+            if alimento_usuario == "fim":
+                break
+            #armazenamento informações de quantidade de calorias
+            quantidade = float(input("Quantas gramas?:  "))
+            quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+            x = (quantidade_nominal*quantidade)/100
+            alimentos_dia_1.append(x)
+            #armazenando informações de quantidade de proteinas
+            quantidade_nominal_proteina = float(alimentos[str(alimento_usuario)][2])
+            y = (quantidade_nominal_proteina*quantidade)/100
+            alimentos_proteinas.append(y)
+            #armazenando informações de quantidade de lipidios 
+            quantidade_nominal_lipidios = float(alimentos[str(alimento_usuario)][4])
+            z = (quantidade_nominal_lipidios*quantidade)/100
+            alimentos_lipidios.append(z)
+            #armazenamento informações de quantidade de carboidratos 
+            quantidade_nominal_carboidratos = float(alimentos[str(alimento_usuario)][3])
+            j = (quantidade_nominal_carboidratos*quantidade)/100
+            alimentos_carboidratos.append(j)     
+        
+        while True:
+            alimento_usuario = input("Informe os alimentos consumidos no segundo dia:  ")
+            if alimento_usuario == "fim":
+                break
+                
+            quantidade = float(input("Quantas gramas?:  "))
+            quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+             #armazenamento informações de quantidade de calorias
+            x = (quantidade_nominal*quantidade)/100
+            alimentos_dia_2.append(x)
+             #armazenando informações de quantidade de proteinas
+            quantidade_nominal_proteina = float(alimentos[str(alimento_usuario)][2])
+            y = (quantidade_nominal_proteina*quantidade)/100
+            alimentos_proteinas.append(y)
+            #armazenando informações de quantidade de lipidios 
+            quantidade_nominal_lipidios = float(alimentos[str(alimento_usuario)][4])
+            z = (quantidade_nominal_lipidios*quantidade)/100
+            alimentos_lipidios.append(z)
+            #armazenamento informações de quantidade de carboidratos 
+            quantidade_nominal_carboidratos = float(alimentos[str(alimento_usuario)][3])
+            j = (quantidade_nominal_carboidratos*quantidade)/100
+            alimentos_carboidratos.append(j)     
+        
+        
+        while True:
+            alimento_usuario = input("Informe os alimentos consumidos no terceiro dia:  ")
+            if alimento_usuario == "fim":
+                break
+                
+            quantidade = float(input("Quantas gramas?:  "))
+            quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+            #armazenamento informações de quantidade de calorias
+            x = (quantidade_nominal*quantidade)/100
+            alimentos_dia_3.append(x)
+             #armazenando informações de quantidade de proteinas
+            quantidade_nominal_proteina = float(alimentos[str(alimento_usuario)][2])
+            y = (quantidade_nominal_proteina*quantidade)/100
+            alimentos_proteinas.append(y)
+            #armazenando informações de quantidade de lipidios 
+            quantidade_nominal_lipidios = float(alimentos[str(alimento_usuario)][4])
+            z = (quantidade_nominal_lipidios*quantidade)/100
+            alimentos_lipidios.append(z)
+            #armazenamento informações de quantidade de carboidratos 
+            quantidade_nominal_carboidratos = float(alimentos[str(alimento_usuario)][3])
+            j = (quantidade_nominal_carboidratos*quantidade)/100
+            alimentos_carboidratos.append(j)     
+        
+        
+        while True:
+            alimento_usuario = input("Informe os alimentos consumidos no quarto dia:  ")
+            if alimento_usuario == "fim":
+                break
+                
+            quantidade = float(input("Quantas gramas?:  "))
+            quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+            #armazenamento informações de quantidade de calorias
+            x = (quantidade_nominal*quantidade)/100
+            alimentos_dia_4.append(x)
+             #armazenando informações de quantidade de proteinas
+            quantidade_nominal_proteina = float(alimentos[str(alimento_usuario)][2])
+            y = (quantidade_nominal_proteina*quantidade)/100
+            alimentos_proteinas.append(y)
+            #armazenando informações de quantidade de lipidios 
+            quantidade_nominal_lipidios = float(alimentos[str(alimento_usuario)][4])
+            z = (quantidade_nominal_lipidios*quantidade)/100
+            alimentos_lipidios.append(z)
+            #armazenamento informações de quantidade de carboidratos 
+            quantidade_nominal_carboidratos = float(alimentos[str(alimento_usuario)][3])
+            j = (quantidade_nominal_carboidratos*quantidade)/100
+            alimentos_carboidratos.append(j)     
+        
+        while True:
+            alimento_usuario = input("Informe os alimentos consumidos no quinto dia:  ")
+            if alimento_usuario == "fim":
+                break
+                
+            quantidade = float(input("Quantas gramas?:  "))
+            quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+             #armazenamento informações de quantidade de calorias
+            x = (quantidade_nominal*quantidade)/100
+            alimentos_dia_5.append(x)
+            #armazenando informações de quantidade de proteinas
+            quantidade_nominal_proteina = float(alimentos[str(alimento_usuario)][2])
+            y = (quantidade_nominal_proteina*quantidade)/100
+            alimentos_proteinas.append(y)
+            #armazenando informações de quantidade de lipidios 
+            quantidade_nominal_lipidios = float(alimentos[str(alimento_usuario)][4])
+            z = (quantidade_nominal_lipidios*quantidade)/100
+            alimentos_lipidios.append(z)
+            #armazenamento informações de quantidade de carboidratos 
+            quantidade_nominal_carboidratos = float(alimentos[str(alimento_usuario)][3])
+            j = (quantidade_nominal_carboidratos*quantidade)/100
+            alimentos_carboidratos.append(j)     
+        
+        
+        while True:
+            alimento_usuario = input("Informe os alimentos consumidos no sexto dia:  ")
+            if alimento_usuario == "fim":
+                break
+                
+            quantidade = float(input("Quantas gramas?:  "))
+            quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+             #armazenamento informações de quantidade de calorias
+            x = (quantidade_nominal*quantidade)/100
+            alimentos_dia_6.append(x)
+             #armazenando informações de quantidade de proteinas
+            quantidade_nominal_proteina = float(alimentos[str(alimento_usuario)][2])
+            y = (quantidade_nominal_proteina*quantidade)/100
+            alimentos_proteinas.append(y)
+            #armazenando informações de quantidade de lipidios 
+            quantidade_nominal_lipidios = float(alimentos[str(alimento_usuario)][4])
+            z = (quantidade_nominal_lipidios*quantidade)/100
+            alimentos_lipidios.append(z)
+            #armazenamento informações de quantidade de carboidratos 
+            quantidade_nominal_carboidratos = float(alimentos[str(alimento_usuario)][3])
+            j = (quantidade_nominal_carboidratos*quantidade)/100
+            alimentos_carboidratos.append(j)     
+        
+        
+        while True:
+            alimento_usuario = input("Informe os alimentos consumidos no sétimo dia:  ")
+            if alimento_usuario == "fim":
+                break
+            quantidade = float(input("Quantas gramas?  "))
+            quantidade_nominal = float(alimentos[str(alimento_usuario)][1])
+             #armazenamento informações de quantidade de calorias
+            x = (quantidade_nominal*quantidade)/100
+            alimentos_dia_6.append(x)
+             #armazenando informações de quantidade de proteinas
+            quantidade_nominal_proteina = float(alimentos[str(alimento_usuario)][2])
+            y = (quantidade_nominal_proteina*quantidade)/100
+            alimentos_proteinas.append(y)
+            #armazenando informações de quantidade de lipidios 
+            quantidade_nominal_lipidios = float(alimentos[str(alimento_usuario)][4])
+            z = (quantidade_nominal_lipidios*quantidade)/100
+            alimentos_lipidios.append(z)
+            #armazenamento informações de quantidade de carboidratos 
+            quantidade_nominal_carboidratos = float(alimentos[str(alimento_usuario)][3])
+            j = (quantidade_nominal_carboidratos*quantidade)/100
+            alimentos_carboidratos.append(j)     
+        
+        break
 #ps.alimentos_consumidos_primeira_semana()#importa do arquivo o input do usuário
 
 alimentos_consumidos_primeira_semana()
@@ -148,6 +247,10 @@ a4 = sum(alimentos_dia_4)            #consumidos a cada dia e
 a5 = sum(alimentos_dia_5)            #transforma nas variaveis 
 a6 = sum(alimentos_dia_6)            #utilizadas no gráfico(consumo)
 a7 = sum(alimentos_dia_7)
+
+a8 = sum(alimentos_proteinas)        
+a9 = sum(alimentos_lipidios)      
+a10 = sum(alimentos_carboidratos) 
 
 
 #------------------------------------------------------------------------------ 
@@ -161,12 +264,31 @@ x = ('Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7')
 y = (a1, a2, a3, a4, a5, a6, a7)
 width = .35
 ind = np.arange(len(y))    #divisão do espaço pelo número de dias(variaveis)
+title('Seu Consumo Diario\n\n')
 plt.bar(ind, y, color='lightpink',edgecolor='black',linewidth=1, width = 0.7)
 plt.xticks(ind + width, x)
 fig.autofmt_xdate()    #deixa a escrita na diagonal -->questão de estilo
 
 plt.show()
 
+
+#------------------------------------------------------------------------------
+'''
+grafico do que foi consumido de gordura, proteina, carboidratos
+'''
+
+
+dias = ('Proteinas', 'Lipidios', 'Carboidratos')
+y_pos = np.arange(len(dias))
+calorias = a8, a9, a10
+
+
+plt.barh(y_pos, calorias, align='center', alpha=0.5, color='blue')
+plt.yticks(y_pos, dias)
+plt.xlabel('Calorias')
+plt.title('Consumo total de Carboidratos, Lipidios, Proteinas')
+
+plt.show()
 
 #------------------------------------------------------------------------------
 '''
@@ -195,7 +317,7 @@ fórmulas: calorias de acordo com grau de atividade física
 '''
 
 def fator_atividade(relacao_calorica):    
-    fator = input("Informe seu fator de atividade\n Mínimo, baixo, médio, alto ou muito alto):  ")    
+    fator = input("Informe seu fator de atividade\n(Mínimo, baixo, médio, alto ou muito alto):  ")    
     
     if fator == "minimo" or "mínimo":
         return (relacao_calorica*1.2)
